@@ -1,11 +1,18 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+
+//traer funcion con comman js de otro archivo
+const producto = require('./producto.js');
+console.log('Funcion ' + producto.saludo('Alejandra'));
+console.log('Funcion ' + producto.despedida('Alejandra'));
+
+
 //primera ruta, en general deberia ser el main
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
-//assi se crean las distintas rutas que forman parte de la app
+//asi se crean las distintas rutas que forman parte de la app
 app.get("/main", (req, res) => {
   res.send("Hello World!   MAINNNNNNN");
 });
